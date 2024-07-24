@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vehicle-search</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src = "JS.js" type="module"></script>
+</head>
+<body>
+    <div id ="container">
+        <header>
+            <h1 class = 'vehiclesearchmaintitle'> VEHICLE SEARCH</h1>
+            <nav>
+                <div class = "nav-container">
+                    <ul class="vehiclesearch-navlinks">            <!-- TOOLBAR -->
+                        <li><a href='peoplesearch.html' class = "people-search ">People search</a></li>
+                        <li><a href='vehiclesearch.html' class = "vsnav-vehiclesearch ">Vehicle search</a></li>
+                        <li><a href='addavehicle.html'class = "vsnav-vehicleadd ">Add a vehicle</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <aside id="sidebar">
+            <p>SEARCH BY A VEHICLE REGISTRATION NUMBER</p>
+            <img
+            src="/images/Car-icon.png" 
+            alt="red icon with yellow cartoon car in it"
+            width= "280"
+            height= "280" />         
+        </aside>
+        
+        <main id="main">
+            <h1>SEARCH FOR A VEHICLE USING ITS VEHICLE REGISTRATION NUMBER BELOW</h1>
+            
+            <div id="searchResults"></div>
+    
+            <form id="vehicleregsearch">
+                <p><strong>Search by Vehicle Registration</strong></p>
+                <input type="text" id="rego" class="vehicleregsearch" placeholder="Search">
+                <button type="button" id="regsubmitbutton">Submit</button>
+            </form>
+
+            <div id="message"></div>
+            <div id="results" class="search-result-container"></div>
+        </main>
+
+        <footer id ="footer">
+            <p>COMP1004 CSW</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+<!-- KEEP -->
