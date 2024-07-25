@@ -1,6 +1,7 @@
 # PROJECTS
-- A simple website that connects to a database.
 
-<br>
+This is a simple website that allows for searching and adding of people and vehicles. 
 
-- This website allows users to search and add both people and vehicles. 
+This website was a project of mine used to develop my skills in HTML, CSS, JS and SQL.
+
+The website connects to a small database via supabase. 
