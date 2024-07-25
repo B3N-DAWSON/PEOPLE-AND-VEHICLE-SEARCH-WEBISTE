@@ -1,7 +1,7 @@
 #container 
 {
   display: grid; /* grid layout */
-  grid-template-columns:1fr 4fr; /* 1 part sidebar, 4 parts main content (1:4 space) */
+  grid-template-columns:1fr 23fr; /* 1 part sidebar, 4 parts main content (1:4 space) */
   grid-template-rows: auto 1fr auto; /* auto for the header and footer, 1fr for the content */
   height: 100vh; /* Full height of the browser rergardless of content (viewport) */
   background-color: white;
@@ -54,7 +54,7 @@ header
 
 #header
 {
-  background-color:#3e403e;
+  background-color:red;
 }
 
 h1.peoplesearchmaintitle,
@@ -245,7 +245,7 @@ header
 .vehicleadd-navlinks a
 {
   font-family: 'Times New Roman', Times, serif , serif,sans-serif;
-  font-style: italic;
+  font-style: no;
   max-width: 100%;
   box-sizing: border-box;
   min-width: 160px; /* Set a minimum width for each link */
