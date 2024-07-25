@@ -253,7 +253,7 @@ main
   padding: 20px;
   margin: 20px;
   border: 5px solid #Bd67bd; /* Green border */
-  border-radius: 10px; /* Rounded corners */
+  border-radius: px; /* Rounded corners */
   background-color: #201f1e; /* Light grey background */
   color: #Bd67bd; /* Dark text color */
   font-family: Arial, sans-serif; /* Font style */
