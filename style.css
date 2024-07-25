@@ -138,16 +138,7 @@ div.search-result-item p
 
 
 
-/* Sidebar text  */
-aside p
-{
-  width: 90%;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 0px;
-  text-align: center;
-}
+
 
 #main
 {
