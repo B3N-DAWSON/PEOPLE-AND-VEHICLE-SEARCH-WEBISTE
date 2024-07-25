@@ -135,28 +135,8 @@ div.search-result-item p
   text-align: center;
 }
 
-#sidebar
-{
-  background-color: #201f1e;
-  grid-column: 1;
-  grid-row: 2 ; /* Span from row 2 to the last row */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
-}
 
-/* Sidebar image */
-#sidebar img 
-{
-  margin-top: 50px;
-  text-align: center;
-  align-items: center;
-  margin-left: 0px; /* Adjust this value as needed */
-  margin-bottom: 200px;
-}
+
 
 /* Sidebar text  */
 aside p
@@ -229,7 +209,7 @@ header
 {
   /* -1 grid col specifies the last grid line so 1 / -1 is start to end */
   grid-column: 1 / -1; /* Make header occupy full width of webpage */
-  grid-row: 1; /
+  grid-row: ; /
 }
 
 /* BACKGROUND COLOUR OF HEADER [KEEP] */
