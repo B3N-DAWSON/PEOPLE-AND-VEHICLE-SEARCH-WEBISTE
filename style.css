@@ -124,16 +124,6 @@ div.search-result-item p
 
 }
 
-#footer
-{
-  /* -1 grid col specifies the last grid line so 1 / -1 is start to end */
-  grid-column: 1 / -1; /* Make footer occupy full width of webpage */
-  grid-row: 3;
-  background-color:#201f1e;
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-}
 
 
 #main
