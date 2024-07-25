@@ -1,6 +1,6 @@
 # PROJECTS
 
-- Link to website: file:///C:/Users/benda/PEOPLE-AND-VEHICLE-SEARCH-WEBISTE/index.html
+- Link to website: https://deadn1ntendogs.github.io/PEOPLE-AND-VEHICLE-SEARCH-WEBISTE/
 
 - This is a simple website that allows for searching and adding of people and vehicles. 
 
