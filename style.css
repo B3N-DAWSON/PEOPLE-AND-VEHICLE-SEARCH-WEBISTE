@@ -207,6 +207,7 @@ header
   min-width: 160px; /* Set a minimum width for each link */
   justify-content: space-between;  
 }
+
 {
   font-family: 'Times New Roman', Times, serif , serif,sans-serif;
   font-style: italic;
@@ -259,7 +260,7 @@ main
   font-size: 1.8em; /* Font size */
   text-align: center; /* Centered text */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
-  margin-bottom: 60px;
+  margin-bottom: 0px;
 }
 
 
@@ -445,18 +446,7 @@ ul.vehiclesearch-navlinks
   margin-right: -50px;
 }
 
-/*
----------------------------------------------------------------------------
-            SIDEBAR                         
----------------------------------------------------------------------------
-*/
 
-
-/*
----------------------------------------------------------------------------
-            FOOTER                         
----------------------------------------------------------------------------
-*/
 
 /*###################################################################### VEHICLE ADD WEBPAGE #########################################################################################################################*/
 
