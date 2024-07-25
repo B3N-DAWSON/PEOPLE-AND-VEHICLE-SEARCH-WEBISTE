@@ -10,7 +10,7 @@
 /* GRID LAYOUT FEATURES */
 header,#sidebar,#main,#footer 
 {
-    border: 1px solid #000;
+    border: 1px solid red;
     margin: 10px;
     padding: 10px;
 }
@@ -54,7 +54,7 @@ header
 
 #header
 {
-  background-color:red;
+  background-color:#3e403e;
 }
 
 h1.peoplesearchmaintitle,
@@ -133,7 +133,6 @@ div.search-result-item p
   display: flex;
   flex-direction: row;
   text-align: center;
-
 }
 
 #sidebar
