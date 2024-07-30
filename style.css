@@ -1,179 +1,198 @@
-#container 
-{
-  display: grid; /* grid layout */
-  grid-template-columns:1fr 23fr; /* 1 part sidebar, 4 parts main content (1:4 space) */
-  grid-template-rows: auto 1fr auto; /* auto for the header and footer, 1fr for the content */
-  height: 100vh; /* Full height of the browser rergardless of content (viewport) */
-  background-color: #111212;
+#container {
+    display: grid;
+    /* grid layout */
+    grid-template-columns: 1fr 23fr;
+    /* 1 part sidebar, 4 parts main content (1:4 space) */
+    grid-template-rows: auto 1fr auto;
+    /* auto for the header and footer, 1fr for the content */
+    height: 100vh;
+    /* Full height of the browser rergardless of content (viewport) */
+    background-color: #111212;
 }
-  
+
+
 /* GRID LAYOUT FEATURES */
-header 
-{
+
+header {
     border: 1px solid #3e403e;
     margin: 10px;
     padding: 10px;
 }
 
-header
-{
-  background-color: #232423;
+header {
+    background-color: #232423;
 }
 
-header,aside#sidebar,main#main,footer#footer
-{
-  background-color: #111212;
+header,
+aside#sidebar,
+main#main,
+footer#footer {
+    background-color: #111212;
 }
 
 
 /* TITLES FOR ALL WEBPAGES*/
+
 .peoplesearchmaintitle,
 .vehiclesearchmaintitle,
-.vehicleaddmaintitle
-{
-  color: #Bd67bd;
-  margin-left: 50px;
+.vehicleaddmaintitle {
+    color: #Bd67bd;
+    margin-left: 50px;
 }
-
 
 
 /*############################################################# ALL ################################################################################################################################################*/
 
+
 /*
 ---------------------------------------------------------------------------
             HEADER                         
 ---------------------------------------------------------------------------
 */
 
-header
-{
-  /* -1 grid col specifies the last grid line so 1 / -1 is start to end */
-  grid-column: 1 / -1; /* Make header occupy full width of webpage */
-  grid-row: 1; /
+header {
+    /* -1 grid col specifies the last grid line so 1 / -1 is start to end */
+    grid-column: 1 / -1;
+    /* Make header occupy full width of webpage */
+    grid-row: 1;
+    /
 }
 
-#header
-{
-  background-color:#3e403e;
+#header {
+    background-color: #3e403e;
 }
 
 h1.peoplesearchmaintitle,
 h1.vehiclesearchmaintitle,
-h1.vehicleaddmaintitle
-{
-  text-align: center;
+h1.vehicleaddmaintitle {
+    text-align: center;
 }
+
 
 /* REMOVES BULLET POINTS FROM NAV BAR [KEEP?] */
-header > nav > .nav-container > .peoplesearch-navlinks,
-header > nav > .nav-container > .vehiclesearch-navlinks,
-header > nav > .nav-container > .vehicleadd-navlinks
-{
-  list-style-type: none;
+
+header>nav>.nav-container>.peoplesearch-navlinks,
+header>nav>.nav-container>.vehiclesearch-navlinks,
+header>nav>.nav-container>.vehicleadd-navlinks {
+    list-style-type: none;
 }
+
 
 /* NAV BAR LINKS */
-header > nav {
-  display: flex;
-  justify-content: center; /* Center the nav links */
+
+header>nav {
+    display: flex;
+    justify-content: center;
+    /* Center the nav links */
 }
 
-header > nav > .nav-container {
-  display: flex;
-  justify-content: center; /* Center the nav links */
+header>nav>.nav-container {
+    display: flex;
+    justify-content: center;
+    /* Center the nav links */
 }
 
-header > nav > .nav-container > ul {
-  display: flex;
-  align-items: center;
-  gap: 100px; /* Adjust this to control the space between links */
-  padding: 0;
-  margin: 0;
+header>nav>.nav-container>ul {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    /* Adjust this to control the space between links */
+    padding: 0;
+    margin: 0;
 }
+
 
 /* TITLES FOR DATA RETURN [KEEP?] */
+
 .license-number-text,
-.dob-text,.name-text,
-.address-text,.person-id-text,
-.expiry-date-text
-{
-  font-weight: bold;
-  color: red;
-  text-align: center;
-  align-items: center;
-  margin-left:0px;
+.dob-text,
+.name-text,
+.address-text,
+.person-id-text,
+.expiry-date-text {
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    align-items: center;
+    margin-left: 0px;
 }
 
-div.search-result-item
-{
-  width: 5px;
-} 
-
-div.search-result-item p
-{
-  margin-left: 0px;
-  margin-right:0px;
-  color: white;
-  gap: 10px;
-  display: flex;
+div.search-result-item {
+    width: 5px;
 }
 
-#text
-{
-  text-align: center;
-
+div.search-result-item p {
+    margin-left: 0px;
+    margin-right: 0px;
+    color: white;
+    gap: 10px;
+    display: flex;
 }
 
-
-
-#main
-{
-  grid-column: 2;
-  grid-row: 2;
+#text {
+    text-align: center;
 }
 
-div#results.search-result-container
-{
-  width: auto; /* Adjust width to fit content */
-  height: auto; /* Adjust height to fit content */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
+#main {
+    grid-column: 2;
+    grid-row: 2;
 }
+
+div#results.search-result-container {
+    width: auto;
+    /* Adjust width to fit content */
+    height: auto;
+    /* Adjust height to fit content */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+}
+
 
 /* RETURN RESULT CONTAINER */
-.search-result-container 
-{
-  display: flex;
-  flex-wrap: nowrap; /* Prevent items from wrapping */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  min-height: 100px; /* Adjust this value as needed */
-  height: auto;
-  width: auto; /* Add this line */
-  margin-top: 7px;
+
+.search-result-container {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Prevent items from wrapping */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
+    min-height: 100px;
+    /* Adjust this value as needed */
+    height: auto;
+    width: auto;
+    /* Add this line */
+    margin-top: 7px;
 }
+
+
 /* RETURN RESULT */
-div.search-result-item 
-{
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 5px; /* Adjust margin as needed */
-  flex: 1 1 auto; 
-  height: 220px;
-  width: 200px;
-  margin-bottom: 0px;
-  text-align:center;
+
+div.search-result-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    /* Adjust margin as needed */
+    flex: 1 1 auto;
+    height: 220px;
+    width: 200px;
+    margin-bottom: 0px;
+    text-align: center;
 }
+
 
 /* SUBMIT BUTTON */
-#submitbutton
-{
-  margin-top : 40px;
-  width: 100px;
-}  
+
+#submitbutton {
+    margin-top: 40px;
+    width: 100px;
+}
+
 
 /*############################################################# PEOPLE SEARCH WEBPAGE ################################################################################################################################################*/
+
 
 /*
 ---------------------------------------------------------------------------
@@ -181,56 +200,66 @@ div.search-result-item
 ---------------------------------------------------------------------------
 */
 
+
 /* GRID LAYOUT FOR WEBPAGE CONTENT [KEEP] */
-header
-{
-  /* -1 grid col specifies the last grid line so 1 / -1 is start to end */
-  grid-column: 1 / -1; /* Make header occupy full width of webpage */
-  grid-row: ; /
+
+header {
+    /* -1 grid col specifies the last grid line so 1 / -1 is start to end */
+    grid-column: 1 / -1;
+    /* Make header occupy full width of webpage */
+    grid-row: 1;
+    /
 }
+
 
 /* BACKGROUND COLOUR OF HEADER [KEEP] */
-#header
-{
-  background-color:#201f1e;
+
+#header {
+    background-color: #201f1e;
 }
+
 
 /* PEOPLE SEARCH NAV BAR  */
+
 .peoplesearch-navlinks a,
 .vehiclesearch-navlinks a,
-.vehicleadd-navlinks a
-{
-  font-family: 'Times New Roman', Times, serif , serif,sans-serif;
-  font-style: no;
-  max-width: 100%;
-  box-sizing: border-box;
-  min-width: 160px; /* Set a minimum width for each link */
-  justify-content: space-between;  
+.vehicleadd-navlinks a {
+    font-family: 'Times New Roman', Times, serif, serif, sans-serif;
+    font-style: no;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: 160px;
+    /* Set a minimum width for each link */
+    justify-content: space-between;
 }
 
 {
-  font-family: 'Times New Roman', Times, serif , serif,sans-serif;
-  font-style: italic;
-  max-width: 100%;
-  box-sizing: border-box;
-  min-width: 160px; /* Set a minimum width for each link */
-  justify-content: space-between;  
+    font-family: 'Times New Roman', Times, serif, serif, sans-serif;
+    font-style: italic;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: 160px;
+    /* Set a minimum width for each link */
+    justify-content: space-between;
 }
+
 
 /* OTHER WEBPAGE LINK */
+
 .psnav-vehiclesearch,
-.psnav-vehicleadd
-{
-  color: white;
+.psnav-vehicleadd {
+    color: white;
 }
 
+
 /* CURRENT WEBPAGE */
-.psnav-peoplesearch
-{
-  text-decoration: none;
-  font-weight: bold;
-  color: pink;
+
+.psnav-peoplesearch {
+    text-decoration: none;
+    font-weight: bold;
+    color: pink;
 }
+
 
 /*
 ---------------------------------------------------------------------------
@@ -238,101 +267,116 @@ header
 ---------------------------------------------------------------------------
 */
 
-main
-{
-  background-color: #3e403e;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+main {
+    background-color: #3e403e;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#main h1
-{
-  padding: 20px;
-  margin: 20px;
-  border: 5px solid #Bd67bd; /* Green border */
-  border-radius: px; /* Rounded corners */
-  background-color: #201f1e; /* Light grey background */
-  color: #Bd67bd; /* Dark text color */
-  font-family: Arial, sans-serif; /* Font style */
-  font-size: 1.8em; /* Font size */
-  text-align: center; /* Centered text */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
-  margin-bottom: 50px;
-  margin-top: 0px;
+#main h1 {
+    padding: 20px;
+    margin: 20px;
+    /*border: 5px solid #Bd67bd; /* Green border */
+    border-radius: px;
+    /* Rounded corners */
+    /*background-color: #201f1e; /* Light grey background */
+    color: #Bd67bd;
+    /* Dark text color */
+    font-family: Arial, sans-serif;
+    /* Font style */
+    font-size: 1.8em;
+    /* Font size */
+    text-align: center;
+    /* Centered text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for a 3D effect */
+    margin-bottom: 50px;
+    margin-top: 0px;
 }
 
 
 /* DRIVER NAME SEARCHBAR */
-.driver-name-search
-{
-  margin-top: -10px;
-  margin-bottom: 30px;
-  width: 500px;
-  height: 25px;
+
+.driver-name-search {
+    margin-top: -10px;
+    margin-bottom: 30px;
+    width: 500px;
+    height: 25px;
 }
+
 
 /* LICENSE NUMBER SEARCHBAR */
-.license-num-search
-{
-  margin-top: -10px;
-  width: 500px;
-  height: 25px;
+
+.license-num-search {
+    margin-top: -10px;
+    width: 500px;
+    height: 25px;
 }
+
 
 /* FORM FOR PEOPLE SEARCH */
-form#searchdb
-{
-  margin-top: 10px;
-  margin-bottom: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 800px;
-  border-color: #Bd67bd;
-  border-width: 5px;
-  background-color: #111212;
+
+form#searchdb {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 800px;
+    border-color: #Bd67bd;
+    border-width: 5px;
+    background-color: #111212;
 }
 
+
 /* TEXT FOR SEARCHBARS */
-form#searchdb p
-{
-  margin-top: 10px;
-  margin-bottom: 15px;
-  margin-left: -180px;
-  width: 300px;
-  color: white;
+
+form#searchdb p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-left: -180px;
+    width: 300px;
+    color: white;
 }
 
 #message {
-  color: #b80909;
-  margin: auto;
-  width: 50%; /* or any other width */
-  font-size: 18px;
-  font-weight: bold; /* Corrected 'text-emphasis' to 'font-weight' */
-  text-align: center;
-  margin-bottom: 1px;
-  margin-top: 50px;
-  position: relative; /* Added for positioning the pseudo-element */
-  display: none; /* Initially hidden */
-  border-bottom: none; /* Remove any existing border-bottom */
-  margin-bottom: 30px;;
-
+    color: #b80909;
+    margin: auto;
+    width: 50%;
+    /* or any other width */
+    font-size: 18px;
+    font-weight: bold;
+    /* Corrected 'text-emphasis' to 'font-weight' */
+    text-align: center;
+    margin-bottom: 1px;
+    margin-top: 50px;
+    position: relative;
+    /* Added for positioning the pseudo-element */
+    display: none;
+    /* Initially hidden */
+    border-bottom: none;
+    /* Remove any existing border-bottom */
+    margin-bottom: 30px;
+    ;
 }
 
 #message::after {
-  content: "";
-  display: block;
-  width: 50%; /* 3/4 the width of the text */
-  height: 2px; /* Adjust thickness as needed */
-  background-color: #b80909;
-  position: absolute;
-  left: 25%; /* Centers the underline */
-  bottom: -10px; /* Adjusted spacing from the text */
+    content: "";
+    display: block;
+    width: 50%;
+    /* 3/4 the width of the text */
+    height: 2px;
+    /* Adjust thickness as needed */
+    background-color: #b80909;
+    position: absolute;
+    left: 25%;
+    /* Centers the underline */
+    bottom: -10px;
+    /* Adjusted spacing from the text */
 }
-
 
 
 /*
@@ -340,6 +384,7 @@ form#searchdb p
             SIDEBAR                         
 ---------------------------------------------------------------------------
 */
+
 
 /*
 ---------------------------------------------------------------------------
@@ -348,6 +393,7 @@ form#searchdb p
 
 /*############################################################# VEHICLE SEARCH WEBPAGE #####################################################################################################*/
 
+
 /*
 ---------------------------------------------------------------------------
             HEADER                         
@@ -355,20 +401,20 @@ form#searchdb p
 */
 
 a.people-search,
-.vsnav-vehicleadd
-{
-  color: white;
-  text-align: center;
+.vsnav-vehicleadd {
+    color: white;
+    text-align: center;
 }
 
 
 /* CURRENT WEBPAGE */
-.vsnav-vehiclesearch
-{
-  text-decoration: none;
-  font-weight: bold;
-  color: pink !important;
+
+.vsnav-vehiclesearch {
+    text-decoration: none;
+    font-weight: bold;
+    color: pink !important;
 }
+
 
 /*
 ---------------------------------------------------------------------------
@@ -376,80 +422,80 @@ a.people-search,
 ---------------------------------------------------------------------------
 */
 
-form#vehicleregsearch
-{
-  margin-left: 100px;
-  margin-bottom: 0px;
-  border-color: #Bd67bd;
-  border-width: 5px;
-  background-color: #111212;
+form#vehicleregsearch {
+    margin-left: 100px;
+    margin-bottom: 0px;
+    border-color: #Bd67bd;
+    border-width: 5px;
+    background-color: #111212;
 }
 
-form#vehicleregsearch p
-{
-  color: white;
-  margin-right: 70px;
-
+form#vehicleregsearch p {
+    color: white;
+    margin-right: 70px;
 }
+
 
 /*  */
-.vehicle-search-result-container
-{
-  display: flex;
-  flex-wrap: nowrap; /* Prevent items from wrapping */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  min-height: 100px; /* Adjust this value as needed */
-  height: 370px;
-  width: 500px; /* Add this line */
-  text-align: center;
-  margin-top: 9px;
-  color : black;
-  font-weight: bold;
+
+.vehicle-search-result-container {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Prevent items from wrapping */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
+    min-height: 100px;
+    /* Adjust this value as needed */
+    height: 370px;
+    width: 500px;
+    /* Add this line */
+    text-align: center;
+    margin-top: 9px;
+    color: black;
+    font-weight: bold;
 }
+
 
 /* VEHICLE REG SEARCHBAR */
-.vehicleregsearch
-{
-  margin-bottom: 0px;
-  margin-left: 0px;
-  width: 300px;
-  height: 40px;
+
+.vehicleregsearch {
+    margin-bottom: 0px;
+    margin-left: 0px;
+    width: 300px;
+    height: 40px;
 }
 
-form#vehicleregsearch
-{
-  margin-top: 50px;
-  margin-bottom: 20px;
-  width: 5000vh;
-  align-items: center;
-  margin-left: 0;
-  margin-right: 0;
+form#vehicleregsearch {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 5000vh;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 span.vehicle-id,
 span.vehicle-make,
 span.vehicle-model,
 span.dob-text,
-span.license-number-text
-{
-  color: red;
-  font-weight: bold;
+span.license-number-text {
+    color: red;
+    font-weight: bold;
 }
 
-#regsubmitbutton
-{
-  margin-top: 10px;
+#regsubmitbutton {
+    margin-top: 10px;
 }
 
-ul.vehiclesearch-navlinks
-{
-  margin-right: -50px;
+ul.vehiclesearch-navlinks {
+    margin-right: -50px;
 }
-
 
 
 /*###################################################################### VEHICLE ADD WEBPAGE #########################################################################################################################*/
+
 
 /*
 ---------------------------------------------------------------------------
@@ -458,31 +504,28 @@ ul.vehiclesearch-navlinks
 */
 
 .vsnav-peoplesearch,
-.vsnav-vehicleadd
-{
-  color: white;
+.vsnav-vehicleadd {
+    color: white;
 }
-
-
 
 a.People.search,
-.vanav-vehiclesearch
-{
-  color: white;
+.vanav-vehiclesearch {
+    color: white;
 }
+
 
 /* CURRENT WEBPAGE HIGHLIGHT */
-.vanav-vehicleadd
-{
-  text-decoration: none;
-  font-weight: bold;
-  color: pink !important;
+
+.vanav-vehicleadd {
+    text-decoration: none;
+    font-weight: bold;
+    color: pink !important;
 }
 
-.vehicleaddimage
-{
-  margin-left: 5000px;
+.vehicleaddimage {
+    margin-left: 5000px;
 }
+
 
 /*
 ---------------------------------------------------------------------------
@@ -490,135 +533,143 @@ a.People.search,
 ---------------------------------------------------------------------------
 */
 
+
 /* INNER BOX DB RETURN - VEHICLE ADD */
-.vehicle-add-inner-box
-{
-  display: flex; /* Make this a flex container */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  border: 3px dashed #000; /* Border style */
-  padding: 10px; /* Padding inside the inner box */
-  height: 40vh;
-  width: 65vw;
-  margin-left:3vw;
-  position: relative; /* Add this line */
-  overflow: auto; /* Add this line */
-  margin-top: 5vh;
+
+.vehicle-add-inner-box {
+    display: flex;
+    /* Make this a flex container */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
+    border: 3px dashed #000;
+    /* Border style */
+    padding: 10px;
+    /* Padding inside the inner box */
+    height: 40vh;
+    width: 65vw;
+    margin-left: 3vw;
+    position: relative;
+    /* Add this line */
+    overflow: auto;
+    /* Add this line */
+    margin-top: 5vh;
 }
+
 
 /* d */
-form#vehicleadd
-{
-  margin-top: 10px;
-  align-items: center;
-  margin-bottom: 0px;
-  border-color: #Bd67bd;
-  border-width: 5px;
-  background-color: #111212
+
+form#vehicleadd {
+    margin-top: 10px;
+    align-items: center;
+    margin-bottom: 0px;
+    border-color: #Bd67bd;
+    border-width: 5px;
+    background-color: #111212
 }
 
-form#addOwnerForm
-{
-  margin-top: 0px;
-  margin-bottom: 0px;
-  border-color: #Bd67bd;
-  border-width: 5px;
-  background-color: #111212
+form#addOwnerForm {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-color: #Bd67bd;
+    border-width: 5px;
+    background-color: #111212
 }
 
 form#vehicleadd p,
-label
-{
-  color: white;
+label {
+    color: white;
 }
 
-div#form-container
-{
-  margin-top: 0px;
-
+div#form-container {
+    margin-top: 0px;
 }
+
 
 /* ALL ELEMENTS IN THE FORM */
-#searchdb 
-{
-  display: flex;
-  flex-direction: column;
+
+#searchdb {
+    display: flex;
+    flex-direction: column;
 }
+
 
 /* TITLE FOR FORM */
-main h1
-{
-  margin-top: 25px;
-  margin-left: 190px;
-  margin-bottom: 0px;
-  font-size: 30px; /* Adjust the font size as needed */
-  color: purple;
+
+main h1 {
+    margin-top: 25px;
+    margin-left: 190px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    /* Adjust the font size as needed */
+    color: purple;
 }
 
-.vehicleaddsearchbar
-{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
+.vehicleaddsearchbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-form
- {
-  display: flex; /* Add this line */
-  flex-direction: column; /* Add this line */
-  align-items: center;
-  width: 50%;
-  max-width: 600px;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  /* margin: 0 auto; Change this line */
-  font-size: 15px;
-  margin-bottom: 70px;
+form {
+    display: flex;
+    /* Add this line */
+    flex-direction: column;
+    /* Add this line */
+    align-items: center;
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /* margin: 0 auto; Change this line */
+    font-size: 15px;
+    margin-bottom: 70px;
 }
 
 div.input-row {
-  justify-content: center; /* Add this line */
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  flex-direction: column;
+    justify-content: center;
+    /* Add this line */
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    flex-direction: column;
 }
 
-.input-group1 
-{
-  flex: 1 0 30%;
-    margin: 0 10px; /* Adjust this value as needed */
+.input-group1 {
+    flex: 1 0 30%;
+    margin: 0 10px;
+    /* Adjust this value as needed */
     margin-bottom: 0px;
 }
 
-.input-group1 p
-{
-  margin-bottom: 0px;
-  margin-left:10px;
+.input-group1 p {
+    margin-bottom: 0px;
+    margin-left: 10px;
 }
 
 form#vehicleadd,
-form#addOwnerForm
-{
-  margin-top: 0px;
-  width: 300px;
+form#addOwnerForm {
+    margin-top: 0px;
+    width: 300px;
 }
 
-button#vehicleaddsubmitbutton
-{
-  margin-right: 10px;
-  margin-top: 10px;
+button#vehicleaddsubmitbutton {
+    margin-right: 10px;
+    margin-top: 10px;
 }
+
 
 /*
 ---------------------------------------------------------------------------
             SIDEBAR                         
 ---------------------------------------------------------------------------
 */
+
 
 /*
 ---------------------------------------------------------------------------
@@ -629,208 +680,170 @@ button#vehicleaddsubmitbutton
 
 /*###################################################################### ERRORS #########################################################################################################################*/
 
-.error-nothing 
-{
-  color: red;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px;
-  border: 1px solid red;
-  border-radius: 5px;
-  margin-top: 10px;
+.error-nothing {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
-#message 
-{
-  color: red;
+#message {
+    color: red;
 }
+
 
 /*###################################################################### 500px WINDOW #########################################################################################################################*/
 
-
-@media (max-width: 500px)
-{
-  #container 
-  {
-      display: grid; /* grid layout */
-      grid-template-columns:1fr fr  ; /* 1 part sidebar, 4 parts main content (1:4 space) */
-      grid-template-rows:  auto auto auto; /* auto for the header and footer, 1fr for the content */
-      height: 100vh; /* Full height of the browser rergardless of content (viewport) */
-      /* auto = adjusts the size of something based on the content contained within it - each value represents a row */
-  }
-     
-/*
+@media (max-width: 500px) {
+    #container {
+        display: grid;
+        /* grid layout */
+        grid-template-columns: 1fr fr;
+        /* 1 part sidebar, 4 parts main content (1:4 space) */
+        grid-template-rows: auto auto auto;
+        /* auto for the header and footer, 1fr for the content */
+        height: 100vh;
+        /* Full height of the browser rergardless of content (viewport) */
+        /* auto = adjusts the size of something based on the content contained within it - each value represents a row */
+    }
+    /*
 ---------------------------------------------------------------------------
             HEADER                         
 ---------------------------------------------------------------------------
 */
-
-  header
-  {
-    grid-column: 1 / -1;
-    grid-row: 1;
-  }
-
-  h1.peoplesearchmaintitle,
-  h1.vehiclesearchmaintitle,
-  h1.vehicleaddmaintitle
-  {
-    margin-left: -200px;
-  }
-
-  ul.peoplesearch-navlinks,
-  ul.vehiclesearch-navlinks,
-  ul.vehicleadd-navlinks
-  {
-    display: flex;
-    flex-direction: column;
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
-    gap: 0px; /* Remove gap */
-    margin-bottom: 0px;
-    margin-top: 0px;
-    margin-left: 500px;
-  }
-
-  div.nav-container
-  {
-    margin-left: -200px;
-  }
-
-
-
-/*
+    header {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+    h1.peoplesearchmaintitle,
+    h1.vehiclesearchmaintitle,
+    h1.vehicleaddmaintitle {
+        margin-left: -200px;
+    }
+    ul.peoplesearch-navlinks,
+    ul.vehiclesearch-navlinks,
+    ul.vehicleadd-navlinks {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        /* Remove margin */
+        padding: 0;
+        /* Remove padding */
+        gap: 0px;
+        /* Remove gap */
+        margin-bottom: 0px;
+        margin-top: 0px;
+        margin-left: 500px;
+    }
+    div.nav-container {
+        margin-left: -200px;
+    }
+    /*
 ---------------------------------------------------------------------------
             MAIN                         
 ---------------------------------------------------------------------------
 */
-  #main
-  {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-
-  #main h1
-  {
-    margin-top: 60px;
-    margin-bottom: 70px;
-    width: 50%;
-    margin-left: -180px;
-  }
-
-  /* SEARCH BAR  */
-  .search-driver-name,
-  .search-driver-license-num 
-  {
-    display: flex;
-    margin-bottom: 50px; /* Increase this value to increase space */
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 10px;
-    height: 40px;
-    margin-top: 30px;
-    margin-left: 30px;
-    height : 30px;
-  }
-
-  #searchbar-drivername,
-  #searchbar-licensenum
-  {
-    margin-top: 10px;
-    height : 35px;
-  }
-
-  /* BUTTON */
-  .submit-button button
-  {
-    display:flex; 
-    font-size: 16px;
-    margin-top: 90px;
-    margin-left:10px;
-  }
-
-  form#searchdb,
-  input#name.driver-name-search,
-  input#licenseSearchInput.license-num-search
-  {
-    width: 70%; /* Adjust the width to fit within smaller screens */
-    margin: 20px auto; /* Center the form with margin auto */
-    padding: 10px; /* Adjust padding if necessary */
-    margin-top: 0px;
-    margin-left: 10px;
-  }
-
-  form#vehicleregsearch
-  { 
-    width: 50%;
-    margin-left: -200px;
-    margin-top: 0px;
-  }
-
-  form#searchdb
-  {
-    width : 60%;
-    margin-left: 5px;
-  }
-
-  form#searchdb p
-  {
-    margin-left: -40px;
-    margin-right: 0px;
-  }
-
-  input#name.driver-name-search
-  {
-    margin-bottom: 50px;
-  }
-
-  div#form-container
-  { 
-    margin-right: 200px;
-  }
-
-  div#results.search-result-container
-  { 
-    display: flex;
-    flex-direction: column;
-    margin-left: -200px;
-  }
-
-  #message
-  {
-    margin-left: 50px;
-  }
-/*
+    #main {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+    #main h1 {
+        margin-top: 60px;
+        margin-bottom: 70px;
+        width: 50%;
+        margin-left: -180px;
+    }
+    /* SEARCH BAR  */
+    .search-driver-name,
+    .search-driver-license-num {
+        display: flex;
+        margin-bottom: 50px;
+        /* Increase this value to increase space */
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+        height: 40px;
+        margin-top: 30px;
+        margin-left: 30px;
+        height: 30px;
+    }
+    #searchbar-drivername,
+    #searchbar-licensenum {
+        margin-top: 10px;
+        height: 35px;
+    }
+    /* BUTTON */
+    .submit-button button {
+        display: flex;
+        font-size: 16px;
+        margin-top: 90px;
+        margin-left: 10px;
+    }
+    form#searchdb,
+    input#name.driver-name-search,
+    input#licenseSearchInput.license-num-search {
+        width: 70%;
+        /* Adjust the width to fit within smaller screens */
+        margin: 20px auto;
+        /* Center the form with margin auto */
+        padding: 10px;
+        /* Adjust padding if necessary */
+        margin-top: 0px;
+        margin-left: 10px;
+    }
+    form#vehicleregsearch {
+        width: 50%;
+        margin-left: -200px;
+        margin-top: 0px;
+    }
+    form#searchdb {
+        width: 60%;
+        margin-left: 5px;
+    }
+    form#searchdb p {
+        margin-left: -40px;
+        margin-right: 0px;
+    }
+    input#name.driver-name-search {
+        margin-bottom: 50px;
+    }
+    div#form-container {
+        margin-right: 200px;
+    }
+    div#results.search-result-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: -200px;
+    }
+    #message {
+        margin-left: 50px;
+    }
+    /*
 ---------------------------------------------------------------------------
             SIDEBAR                         
 ---------------------------------------------------------------------------
 */
-
-  #sidebar
-  {
-    grid-column: 1;
-    grid-row: 3 ; 
-  }
-
-/*
+    #sidebar {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    /*
 ---------------------------------------------------------------------------
             FOOTER                         
 ---------------------------------------------------------------------------
 */
-
-  #footer,
-  footer#footer
-  {
-    grid-column: 2 ; /* Second column on same row to be horizontal to sidebar */
-    grid-row: 3;    
-    display: flex;
-    flex-direction: column;
-  }
-
-  #footer p
-  {
-    margin-right : 200px;
-  }
+    #footer,
+    footer#footer {
+        grid-column: 2;
+        /* Second column on same row to be horizontal to sidebar */
+        grid-row: 3;
+        display: flex;
+        flex-direction: column;
+    }
+    #footer p {
+        margin-right: 200px;
+    }
 }
-
-
