@@ -4,13 +4,13 @@
   grid-template-columns:1fr 23fr; /* 1 part sidebar, 4 parts main content (1:4 space) */
   grid-template-rows: auto 1fr auto; /* auto for the header and footer, 1fr for the content */
   height: 100vh; /* Full height of the browser rergardless of content (viewport) */
-  background-color: white;
+  background-color: #111212;
 }
   
 /* GRID LAYOUT FEATURES */
-header,#main 
+header 
 {
-    border: 1px solid red;
+    border: 1px solid #3e403e;
     margin: 10px;
     padding: 10px;
 }
