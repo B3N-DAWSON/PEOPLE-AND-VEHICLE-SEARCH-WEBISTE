@@ -8,7 +8,7 @@
 }
   
 /* GRID LAYOUT FEATURES */
-header,#sidebar,#main,#footer 
+header,#main 
 {
     border: 1px solid red;
     margin: 10px;
