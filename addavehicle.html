@@ -1,64 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vehicle-add</title>
-    <link rel="stylesheet" href="style.css"/>
-    <script src = "JS.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="JS.js" type="module"></script>
 </head>
+
 <body>
-    <div id ="container">
+    <div id="container">
         <header>
-            <h1 class = 'vehicleaddmaintitle'>ADD A VEHICLE</h1>
+            <h1 class='vehicleaddmaintitle'>Insure My Ride</h1>
             <nav>
-                <div class = "nav-container">
-                    <ul class="vehicleadd-navlinks">            <!-- TOOLBAR -->
-                        <li><a href='index.html' class = "people-search ">People search</a></li>
-                        <li><a href='vehiclesearch.html' class = "vanav-vehiclesearch ">Vehicle search</a></li>
-                        <li><a href='addavehicle.html'class = "vanav-vehicleadd ">Add a vehicle</a></li>
+                <div class="nav-container">
+                    <ul class="vehicleadd-navlinks">
+                        <!-- TOOLBAR -->
+                        <li><a href='index.html' class="people-search ">People search</a></li>
+                        <li><a href='vehiclesearch.html' class="vanav-vehiclesearch ">Vehicle search</a></li>
+                        <li><a href='addavehicle.html' class="vanav-vehicleadd ">Add a vehicle</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
-        
-        
-        
+
+
+
 
         <main id="main">
-            <h1>ADD A VEHICLE TO THE SYSTEM BELOW</h1>
+            <h1 id="addvehicle">ADD A VEHICLE</h1>
             <div id="searchresults"></div>
-                <div id = form-container>
-                    <form id="vehicleadd">
-                        <div class="input-row">
-                            <div class="input-group1">
-                                <p><strong>Input Vehicle Registration</strong></p>
-                                <input type="text" id="rego" class="vehicleaddsearchbar" placeholder="Enter">
-                            </div>
-                            <div class="input-group1">
-                                <p><strong>Input Vehicle Make</strong></p>
-                                <input type="text" id="make" class="vehicleaddsearchbar" placeholder="Enter">
-                            </div>
-                            <div class="input-group1">
-                                <p><strong>Input Vehicle Model</strong></p>
-                                <input type="text" id="model" class="vehicleaddsearchbar" placeholder="Enter">
-                            </div>
+            <div id=f orm-container>
+                <form id="vehicleadd">
+                    <div class="input-row">
+                        <div class="input-group1">
+                            <p><strong>Input Vehicle Registration</strong></p>
+                            <input type="text" id="rego" class="vehicleaddsearchbar" placeholder="Enter">
                         </div>
-                        <div class="input-row">
-                            <div class="input-group1">
-                                <p><strong>Input Vehicle Colour</strong></p>
-                                <input type="text" id="colour" class="vehicleaddsearchbar" placeholder="Enter">
-                            </div>
-                            <div class="input-group1">
-                                <p><strong>Input Vehicle Owner</strong></p>
-                                <input type="text" id="owner" class="vehicleaddsearchbar" placeholder="Enter">
-                            </div>
+                        <div class="input-group1">
+                            <p><strong>Input Vehicle Make</strong></p>
+                            <input type="text" id="make" class="vehicleaddsearchbar" placeholder="Enter">
                         </div>
-                        <button type="button" id="vehicleaddsubmitbutton">Add vehicle</button>
-                    </form>
-                </div>
-                <div id="message"></div>
-                <div id="results" class="search-result-container"></div> 
+                        <div class="input-group1">
+                            <p><strong>Input Vehicle Model</strong></p>
+                            <input type="text" id="model" class="vehicleaddsearchbar" placeholder="Enter">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group1">
+                            <p><strong>Input Vehicle Colour</strong></p>
+                            <input type="text" id="colour" class="vehicleaddsearchbar" placeholder="Enter">
+                        </div>
+                        <div class="input-group1">
+                            <p><strong>Input Vehicle Owner</strong></p>
+                            <input type="text" id="owner" class="vehicleaddsearchbar" placeholder="Enter">
+                        </div>
+                    </div>
+                    <button type="button" id="vehicleaddsubmitbutton">Add vehicle</button>
+                </form>
+            </div>
+
+            <!-- SUCCESS, ERROR MSG + DB RETURN -->
+            <section id="returncontainer">
+                <section id="messages">
+                    <div id="error"></div>
+                    <div id="message"></div>
+                </section>
+
+                <section id="returnresults">
+                    <div id="resultsnum"></div>
+                    <div id="results" class="search-result-container"></div>
+            </section>
         </main>
 
 
@@ -66,4 +79,5 @@
     </div>
 
 </body>
+
 </html>

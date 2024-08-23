@@ -1,47 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vehicle-search</title>
-    <link rel="stylesheet" href="style.css"/>
-    <script src = "JS.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="JS.js" type="module"></script>
 </head>
+
 <body>
-    <div id ="container">
+    <div id="container">
         <header>
-            <h1 class = 'vehiclesearchmaintitle'> VEHICLE SEARCH</h1>
+            <h1 class='vehiclesearchmaintitle'> INSURE MY RIDE</h1>
             <nav>
-                <div class = "nav-container">
-                    <ul class="vehiclesearch-navlinks">            <!-- TOOLBAR -->
-                        <li><a href='index.html' class = "people-search ">People search</a></li>
-                        <li><a href='vehiclesearch.html' class = "vsnav-vehiclesearch ">Vehicle search</a></li>
-                        <li><a href='addavehicle.html'class = "vsnav-vehicleadd ">Add a vehicle</a></li>
+                <div class="nav-container">
+                    <ul class="vehiclesearch-navlinks">
+                        <!-- TOOLBAR -->
+                        <li><a href='index.html' class="people-search ">People search</a></li>
+                        <li><a href='vehiclesearch.html' class="vsnav-vehiclesearch ">Vehicle search</a></li>
+                        <li><a href='addavehicle.html' class="vsnav-vehicleadd ">Add a vehicle</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
-        
 
-        
+
+
         <main id="main">
-            <h1>SEARCH FOR A VEHICLE USING ITS VEHICLE REGISTRATION NUMBER BELOW</h1>
-            
-            <div id="searchResults"></div>
-    
+
+            <!-- PAGE TITLE -->
+            <h1 id="regsearch">SEARCH FOR A VEHICLE</h1>
+            <!-- TITLE DESC -->
+            <p id="vsdesc">Enter your vehicle's registration number to find the vehicle in the system</p>
+                    
+            <!-- FORM FOR VEHICLE REG SEARCHBAR -->
             <form id="vehicleregsearch">
                 <p><strong>Search by Vehicle Registration</strong></p>
-                <input type="text" id="rego" class="vehicleregsearch" placeholder="Search">
-                <button type="button" id="regsubmitbutton">Submit</button>
+                <input type="text" id="vssearchbar" class="vehicleregsearch" placeholder="ENTER REG NUMBER">
+                <button type="button" id="regsubmitbutton">FIND BY VEHICLE REG ></button>
             </form>
 
-            <div id="message"></div>
-            <div id="results" class="search-result-container"></div>
+            <!-- SUCCESS, ERROR MSG + DB RETURN -->
+            <section id="returncontainer">
+                <section id="messages">
+                    <div id="error"></div>
+                    <div id="message"></div>
+                </section>
+
+                <section id="returnresults">
+                    <div id="resultsnum"></div>
+                    <div id="results" class="search-result-container"></div>
+            </section>
+
         </main>
 
 
     </div>
 
 </body>
+
 </html>
 <!-- KEEP -->

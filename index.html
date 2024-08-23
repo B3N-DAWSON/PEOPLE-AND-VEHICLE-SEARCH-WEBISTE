@@ -1,46 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>people-search</title>
-    <link rel="stylesheet" href="style.css"/>
-    <script src = "JS.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="JS.js" type="module"></script>
 </head>
+
 <body>
-    <div id ="container">
+    <div id="container">
         <header>
-            <h1 class = 'peoplesearchmaintitle'> PEOPLE SEARCH</h1>
             <nav>
-                <div class = "nav-container">
-                    <ul class="peoplesearch-navlinks">    <!-- TOOLBAR -->
-                        <li><a href='index.html' class = "psnav-peoplesearch">People search</a></li>
-                        <li><a href='vehiclesearch.html' class = "psnav-vehiclesearch">Vehicle search</a></li>
-                        <li><a href='addavehicle.html'class = "psnav-vehicleadd">Add a vehicle</a></li>
+                <div class="nav-container">
+                    <ul class="peoplesearch-navlinks">
+                        <!-- TOOLBAR -->
+                        <li><a href='projectmotivation.html' class="psnav-project motive">Project motivation</a></li>
+                        <li><a href='index.html' class="psnav-peoplesearch">People search</a></li>
+                        <li><a href='vehiclesearch.html' class="psnav-vehiclesearch">Vehicle search</a></li>
+                        <li><a href='addavehicle.html' class="psnav-vehicleadd">Add a vehicle</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
-        
 
-        
+
+
         <main id="main">
-            <h1>SEARCH FOR A DRIVER USING THIER NAME OR THEIR LICENSE NUMBER</h1>
-            <div id="searchresults"></div>
-            
-            <form id="searchdb">
-                <p><strong>Search by Driver's Name</strong></p>
-                <input type="text" id="name" class="driver-name-search" placeholder="Search">
-                <p><strong> Search by Driver's License Number</strong></p>
-                <input type="text" id="licensesearchinput" class="license-num-search" placeholder="Search">
-                <button type="button" id="submitbutton">Submit</button>
-            </form>
 
-            <div id="message"></div>
-            <div id="results" class="search-result-container"></div>
+            <h1 id="searchdriver">SEARCH FOR A DRIVER</h1>
+            <p id="dsdesc"> Enter a Driver's name or License Number to find them in the system</p>
+            <div id="searchresults"></div>
+
+            <section id="containforms">
+                <form id="driverform">
+                    <input type="text" id="namesearchinput" class="driver-name-search" placeholder="ENTER DRIVER'S NAME">
+                    <button type="button" id="submitdriver">FIND BY NAME ></button>
+                </form>
+
+                <form id="licenseform">
+                    <input type="text" id="licensesearchinput" class="license-num-search" placeholder="ENTER LICENSE NUMBER">
+                    <button type="button" id="submitlicense">FIND BY LICENSE NUMBER ></button>
+                </form>
+            </section>
+
+
+
+            <section id="returncontainer">
+                <section id="messages">
+                    <div id="error"></div>
+                    <div id="message"></div>
+                </section>
+
+                <section id="returnresults">
+                    <div id="resultsnum"></div>
+                    <div id="results" class="search-result-container"></div>
+                </section>
+            </section>
         </main>
 
     </div>
 
 </body>
+
 </html>
