@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vehicle-add</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="JS.js" type="module"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+
+            <nav>
+                <div class="nav-container">
+                    <ul class="vehicleadd-navlinks">
+                        <!-- TOOLBAR -->
+                            <a href="/index.html" class="noimgtoindex"> 
+                                <img id="logo" src="/images/companylogo.png" alt="Companylogowithcarandtick" width="300px" />
+                            </a>
+                            <li><a href='index.html' class="nonav-peoplesearch ">Search for a customer</a></li>
+                            <li><a href='vehiclesearch.html' class="nonav-vehiclesearch ">Search for a vehicle</a></li>
+                            <li><a href='addavehicle.html' class="nonav-vehicleadd ">Register a vehicle</a></li>
+                            <li><a href='newowner.html' class="nonav-customeradd ">Register a new customer</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+
+
+        <main id="main">
+            <h1 id="addvehicle">REGISTER A NEW CUSTOMER</h1>
+            <p id="addownerdesc">Add the details of the new customer to the system in order to then register their vehicle(s) </p>
+            <a href='addavehicle.html' class="linkaddvehicle">Register vehicle to a customer</a>
+               
+        <form id="vehicleadd">
+            <div class="vasearchcontainer">
+                <div class="norow1">
+                    <section id="name">
+                        <p><strong>Name (First and Last)</strong></p>
+                        <input type="text" id="nameinput" class="owneradd" placeholder="ADD FIRST AND LAST NAME">
+                    </section>
+
+                    <section id="residence">
+                        <p><strong>City of Residence</strong></p>
+                        <input type="text" id="residenceinput" class="owneradd" placeholder="ADD RESIDENCE">
+                    </section>
+                </div>
+
+                <div id="norow2">
+                    <section id="dob">
+                        <p><strong>Date of Birth (DD/MM/YYYY)</strong></p>
+                        <input type="text" id="dobinput" class="owneradd" placeholder="ADD DATE OF BIRTH">
+                    </section>
+
+                    <section id="licensenum">
+                        <p><strong>License Number</strong></p>
+                        <input type="text" id="licenseinput" class="owneradd" placeholder="ADD LICENSE NUMBER">
+                    </section>
+               </div>
+
+                <div class="norow3">  
+                    <section id="expiry">
+                        <p><strong>Expiry Date (MM/YY)</strong></p>
+                        <input type="text" id="expiryinput" class="owneradd" placeholder="ADD EXPIRY DATE">
+                    </section>
+                
+                <button type="button" id="owneraddbutton">ADD CUSTOMER > </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+            <!-- SUCCESS, ERROR MSG + DB RETURN -->
+            <section id="returncontainer">
+                <section id="messages">
+                    <div id="error"></div>
+                    <div id="message"></div>
+                </section>
+
+            </section>
+        </main>
+
+
+
+    </div>
+
+</body>
+
+</html>

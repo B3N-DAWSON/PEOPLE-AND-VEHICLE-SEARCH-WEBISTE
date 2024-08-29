@@ -12,30 +12,30 @@
 
 /*############################################################# ALL ################################################################################################################################################*/
 
+@font-face {
+    font-family: 'abadi-extra-light';
+    src: url('/Fonts/abadi-mt-extra-light_freefontdownload_org/abadi-mt-extra-light.ttf') format('.ttf');
+}
+
 #container {
-display: grid;
-/* grid layout */
-grid-template-columns: 1fr 23fr;
-/* 1 part sidebar, 4 parts main content (1:4 space) */
-grid-template-rows: auto 1fr auto;
-/* auto for the header and footer, 1fr for the content */
-height: 100vh;
-/* Full height of the browser rergardless of content (viewport) */
-background-color: #111212;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr; /* Adjust for more space around main content */
+    grid-template-rows: auto 1fr auto;
+    height: auto;
+    width: 100%;
+    background-color:  #FFD700;
 
 }
 
 
 /* GRID LAYOUT FEATURES */
 header {
-border: 1px solid #3e403e;
 margin: 10px;
 padding: 10px;
+background-color: #FFD700 !important; /* Navbar colour */
 }
 
-header {
-background-color: #232423;
-}
+
 
 /* WEBSITE BACKGROUND COLOUR */
 /* #fef200 */
@@ -56,6 +56,13 @@ margin-left: 50px;
 }
 
 
+
+/* KEEP NAVBAR LINKS TEXT ON ONE LINE */
+li
+{
+    width: 180px;
+}
+
 /*
 ------------------------------------------------------------------------------------------------------------------------------------------------------
                                                                         ALL HEADER                                     
@@ -67,6 +74,24 @@ header {
 grid-column: 1 / -1;
 /* Make header occupy full width of webpage */
 grid-row: 1;
+}
+
+div.nav-container
+{
+    position: relative;
+    bottom: 50px;
+    margin-bottom: -200px !important;
+}
+
+/* COMPANY LOGO FOR ALL PAGES */
+img#logo
+{
+    margin-bottom: 0px;
+    align-items: center;
+    position: relative;
+    right: 300px;
+    bottom: 10px;
+
 }
 
 
@@ -109,6 +134,26 @@ margin-top: 30px;
 margin-bottom: 30px;
 }
 
+/* a.innav-peoplesearch,
+a.innav-vehiclesearch,
+a.innav-vehicleadd,
+a.innav-customeradd,
+a.vsnav-peoplesearch,
+a.vsnav-vehiclesearch,
+a.vsnav-vehicleadd,
+a.vsnav-customeradd,
+a.peoplesearch,
+a.vanav-vehiclesearch,
+a.vanav-vehicleadd,
+a.vanav-customeradd,
+a.nonav-peoplesearch,
+a.nonav-vehiclesearch,
+a.nonav-vehicleadd,
+a.nonav-customeradd
+{
+   font-family:monospace ;
+   color: blue;
+} */
 /*
 ------------------------------------------------------------------------------------------------------------------------------------------------------
                                                                         ALL MAIN                                     
@@ -119,7 +164,7 @@ margin-bottom: 30px;
 main,
 main#main,
 #main {
-background-color: #111212;
+background-color: #FFD700;
 align-items: center;
 display: flex;
 flex-direction: column;
@@ -127,6 +172,8 @@ justify-content: center;
 align-items: center;
 margin-top: -10px;
 height: auto;
+width: auto;
+
 }
 
 /* MAIN SECTION TITLE FOR ALL WEBPAGES */
@@ -136,12 +183,12 @@ h1#addvehicle{
 padding: 20px;
 margin: 20px;
 border-radius: px;
-color: pink;
+color: black;
 font-family: Arial, sans-serif;
 font-size: 80px;
 text-align: center;
 margin-bottom: 0px;
-margin-top: 0px;
+margin-top: 50px;
 }
 
 
@@ -190,8 +237,17 @@ text-align: center;
 /* [CHECK] */
 #main
  {
-grid-column: 2;
+grid-column: 2 !important;
 grid-row: 2;
+    margin: 0 auto; /* Centers it horizontally within the parent */
+
+}
+
+a.linkaddvehicle,
+a.linkaddowner
+{
+    color: #26578b;
+    margin-bottom: 30px;
 }
 
 
@@ -318,6 +374,21 @@ align-items: center;
 text-align: center;
 }
 
+.highlighterror,
+.highlighterror-vs,
+.highlighterror-va
+{
+    border: 3px solid red;
+    outline: none;
+}
+
+#nameerror,
+#licenseerror
+{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
 
 
 /*############################################################# PEOPLE SEARCH WEBPAGE ################################################################################################################################################*/
@@ -343,7 +414,6 @@ grid-row: 1;
 .peoplesearch-navlinks a,
 .vehiclesearch-navlinks a,
 .vehicleadd-navlinks a {
-font-family: 'Times New Roman', Times, serif, serif, sans-serif;
 font-style: no;
 max-width: 100%;
 box-sizing: border-box;
@@ -353,19 +423,26 @@ justify-content: space-between;
 }
 
 
-/* OTHER WEBPAGE LINK */
-.psnav-vehiclesearch,
-.psnav-vehicleadd {
-color: white;
-}
-
-
 /* CURRENT WEBPAGE */
-.psnav-peoplesearch {
+.innav-peoplesearch {
 text-decoration: none;
 font-weight: bold;
-color: pink;
+color: rgb(127, 83, 230) !important;
+ ;
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+/* OTHER WEBPAGE LINK */
+.innav-vehiclesearch,
+.innav-vehicleadd,
+.innav-customeradd
+ {
+    color: rgb(110, 32, 236);
+    font-family: monospace;
+}
+
+
+
 
 
 /*
@@ -378,10 +455,13 @@ color: pink;
 
 /* TITLE DESCRIPTION */
 #dsdesc,
-#vsdesc {
+#vsdesc,
+#addvehicledesc,
+p#addownerdesc {
 margin-top: 0px;
 margin-bottom: 30px;
-color: white;
+color: black !important;
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 
@@ -411,7 +491,7 @@ margin-top: 30px;
 margin-bottom: 0px;
 display: flex;
 flex-direction: row;
-gap: 80px;
+gap: 0px;
 }
 
 
@@ -419,6 +499,7 @@ gap: 80px;
 /* DRIVER NAME SUBMIT BUTTON */
 button#submitdriver {
 margin-top: 0px;
+margin-bottom: 10px;
 width: 510px;
 height: 30px;
 background-color: skyblue;
@@ -440,6 +521,7 @@ width: 500px;
 button#submitlicense,
 button#regsubmitbutton {
 margin-top: 10px;
+margin-bottom: 10px;
 width: 510px;
 height: 30px;
 background-color: skyblue;
@@ -481,6 +563,8 @@ font-weight: bold;
 }
 
 
+
+
 /*############################################################# VEHICLE SEARCH WEBPAGE #####################################################################################################*/
 /*
 
@@ -489,20 +573,24 @@ font-weight: bold;
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 */
 
-a.people-search,
-.vsnav-vehicleadd {
-color: white;
-text-align: center;
-}
 
 
 /* CURRENT WEBPAGE */
 .vsnav-vehiclesearch {
 text-decoration: none;
 font-weight: bold;
-color: pink !important;
+color: rgb(127, 83, 230) !important;
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* OTHER NAVBAR LINK FORMATTING */
+a.vsnav-peoplesearch,
+a.vsnav-vehicleadd,
+a.vsnav-customeradd {
+    color: blue;
+    text-align: center;
+    font-family: monospace;
+}
 
 /*
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -517,6 +605,16 @@ form#vehicleregsearch {
 margin-left: 100px;
 margin-bottom: 0px;
 background-color: white;
+align-items: center;
+width: 50%;
+max-width: 600px;
+padding: 20px;
+background-color: #f8f8f8;
+border: 1px solid #ddd;
+border-radius: 5px;
+/* margin: 0 auto; Change this line */
+font-size: 15px;
+margin-bottom: 70px;
 }
 
 /* #vssearchbar
@@ -560,6 +658,11 @@ width: 300px;
 height: 60px;
 }
 
+#vehicleaddsearchbar
+{
+    font-size: 50px
+}
+
 
 form#vehicleregsearch {
 margin-top: 50px;
@@ -593,23 +696,21 @@ margin-right: -50px;
 */
 
 
-.vsnav-peoplesearch,
-.vsnav-vehicleadd {
-color: white;
-}
-
-
-a.People.search,
-.vanav-vehiclesearch {
-color: white;
-}
-
-
-/* CURRENT WEBPAGE HIGHLIGHT */
+/* CURRENT WEBPAGE */
 .vanav-vehicleadd {
 text-decoration: none;
 font-weight: bold;
-color: pink !important;
+color: rgb(127, 83, 230) !important;
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* OTHER NAVBAR LINK FORMATTING */
+a.people-search,
+a.vanav-vehiclesearch,
+a.vanav-customeradd {
+    color: blue;
+    text-align: center;
+    font-family: monospace;
 }
 
 
@@ -625,6 +726,8 @@ margin-left: 5000px;
 */
 
 
+
+
 /* INNER BOX DB RETURN - VEHICLE ADD */
 .vehicle-add-inner-box {
 display: flex;
@@ -637,27 +740,34 @@ border: 3px dashed #000;
 /* Border style */
 padding: 10px;
 /* Padding inside the inner box */
-height: 40vh;
-width: 65vw;
+height: auto;
+width: auto;
 margin-left: 3vw;
 position: relative;
 /* Add this line */
 overflow: auto;
 /* Add this line */
-margin-top: 5vh;
+margin-top: 10vh;
+}
+
+div#form-container
+{
+    width: auto;
 }
 
 
-/* d */
+
+
+/* 
 form#vehicleadd {
 margin-top: 10px;
 align-items: center;
 margin-bottom: 0px;
 border-width: 5px;
 background-color: #111212
-}
+} */
 
-
+/* FORM FOR ADDING VEHICLE */
 form#addOwnerForm {
 margin-top: 0px;
 margin-bottom: 0px;
@@ -672,65 +782,93 @@ label {
 color: white;
 }
 
+div#searchresults
+{
+    align-items: center;
+}
 
-div#form-container {
+/* div#form-container {
 margin-top: 0px;
+} */
+
+/* VEHICLE ADD MAIN TITLE DESCRIPTION */
+p#addvehicledesc 
+{
+    margin-top: 0px;
+    color: white;
+    margin-bottom: 30px;
 }
 
 
-/* ALL ELEMENTS IN THE FORM */
-#searchdb {
-display: flex;
-flex-direction: column;
+div.vasearchcontainer
+{
+   display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: auto auto 1fr; /* Adjust rows if needed */
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
 }
 
 
-/* TITLE FOR FORM */
-main h1 {
-margin-top: 25px;
-margin-left: 190px;
-margin-bottom: 0px;
-font-size: 30px;
-/* Adjust the font size as needed */
-color: purple;
+div.row1, div#row2{
+    display: contents; /* Ensures each row takes up the right grid space */
+}
+
+section.row1, section#row2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
-.vehicleaddsearchbar {
-display: flex;
-align-items: center;
-justify-content: space-between;
-margin-bottom: 10px;
+
+/* FORMATTING ALL SEARCHBARS FOR VEHICLE ADD */
+input#rego,
+input#model,
+input#colour,
+input#make,
+input#owner,
+#nameinput,
+#residenceinput,
+#dobinput,
+#licenseinput,
+#expiryinput
+{
+    width: 500px;
+    height: 75px 
+}
+
+/* FORMATTING TEXT FOR ALL SEARCHBARS ON VEHICLE ADD */
+section#regsearchtext p,
+section#makesearchtext p,
+section#modelsearchtext p,
+section#coloursearchtext p,
+section#ownersearchtext p
+{
+    margin-bottom: 5px;
 }
 
 
-form {
-display: flex;
-/* Add this line */
-flex-direction: column;
-/* Add this line */
-align-items: center;
-width: 50%;
-max-width: 600px;
-padding: 20px;
-background-color: #f8f8f8;
-border: 1px solid #ddd;
-border-radius: 5px;
-/* margin: 0 auto; Change this line */
-font-size: 15px;
-margin-bottom: 70px;
+/* MOVES OWNER SEARCHBAR TO MIDDLE
+section#ownersearchtext
+{
+    margin-right: -400px;
+} */
+
+div.row3n4
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: -500px;
+    gap: 30px;
 }
 
 
-div.input-row {
-justify-content: center;
-/* Add this line */
-display: flex;
-flex-wrap: wrap;
-margin-bottom: 0px;
-margin-left: 0px;
-flex-direction: column;
-}
 
 
 .input-group1 {
@@ -749,15 +887,101 @@ margin-left: 10px;
 
 form#vehicleadd,
 form#addOwnerForm {
-margin-top: 0px;
-width: 300px;
+    margin: 0 auto; /* Centers the form horizontally */
+    width: 60%; /* Adjust width as necessary */
+    padding: 20px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    margin-top: 0px;
+    width: 300px;
 }
 
 
-button#vehicleaddsubmitbutton {
-margin-right: 10px;
-margin-top: 10px;
+
+#rego,
+#make,
+#model,
+#colour,
+#owner,
+#nameinput,
+#residenceinput,
+#dobinput,
+#licenseinput,
+#expiryinput
+{
+    font-size: 35px;
+    text-align: center;
 }
+
+
+button#vehicleaddsubmitbutton,
+button#owneraddbutton
+{
+
+width: 510px;
+height: 30px;
+}
+
+
+/*###################################################################### NEW OWNER PAGE #########################################################################################################################*/
+
+
+/* HEADER */
+
+/* CURRENT WEBPAGE */
+.nonav-customeradd {
+text-decoration: none;
+font-weight: bold;
+color: rgb(127, 83, 230) !important;
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* OTHER NAVBAR LINK FORMATTING */
+a.nonav-peoplesearch,
+a.nonav-vehiclesearch,
+a.nonav-vehicleadd {
+    color: blue;
+    text-align: center;
+    font-family: monospace;
+}
+
+
+/* MAIN */
+
+/* SPACING: NAME > RESIDENCE & DOB > LICENSE NUM */
+section#residence,
+section#licensenum
+{
+    margin-top: 50px;
+}
+
+
+/* PUTS EXPIRY DATE SEARCHBAR INTO CENTER */
+div.norow3
+{
+    margin-right: -550px;
+}
+
+
+/* SPACING BETWEEN BUTTON AND SEARCHBARS */
+button#owneraddbutton
+{
+    margin-top: 30px;
+}   
+
+
+/* SPACING BETWEEN SEARCHBARS AND THEIR TEXT */
+#name p,
+#residence p,
+#dob p,
+#licensenum p,
+#expiry p
+{
+    margin-bottom: 5px;
+}
+
+
+
+
 
 
 /*###################################################################### ERRORS #########################################################################################################################*/
@@ -782,7 +1006,8 @@ grid-template-columns: 1fr fr;
 /* 1 part sidebar, 4 parts main content (1:4 space) */
 grid-template-rows: auto auto auto;
 /* auto for the header and footer, 1fr for the content */
-height: 100vh;
+height: auto;
+width: auto;
 /* Full height of the browser rergardless of content (viewport) */
 /* auto = adjusts the size of something based on the content contained within it - each value represents a row */
 }

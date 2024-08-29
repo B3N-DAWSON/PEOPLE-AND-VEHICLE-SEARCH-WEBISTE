@@ -12,14 +12,21 @@
 <body>
     <div id="container">
         <header>
+
+         <!-- COMPANY LOGO + LINK TO INDEX -->
+
             <nav>
                 <div class="nav-container">
+                     <a href="/index.html" class="psimgtoindex"> 
+                        <img id="logo" src="/images/companylogo.png" alt="Companylogowithcarandtick" width="300px" />
+                    </a>
                     <ul class="peoplesearch-navlinks">
                         <!-- TOOLBAR -->
-                        <li><a href='projectmotivation.html' class="psnav-project motive">Project motivation</a></li>
-                        <li><a href='index.html' class="psnav-peoplesearch">People search</a></li>
-                        <li><a href='vehiclesearch.html' class="psnav-vehiclesearch">Vehicle search</a></li>
-                        <li><a href='addavehicle.html' class="psnav-vehicleadd">Add a vehicle</a></li>
+                                <li><a href='index.html' class="innav-peoplesearch ">Search for a customer</a></li>
+                                <li><a href='vehiclesearch.html' class="innav-vehiclesearch ">Search for a vehicle</a></li>
+                                <li><a href='addavehicle.html' class="innav-vehicleadd ">Register a vehicle</a></li>
+                                <li><a href='newowner.html' class="innav-customeradd ">Register a new customer</a></li>
+                            
                     </ul>
                 </div>
             </nav>
@@ -37,11 +44,14 @@
                 <form id="driverform">
                     <input type="text" id="namesearchinput" class="driver-name-search" placeholder="ENTER DRIVER'S NAME">
                     <button type="button" id="submitdriver">FIND BY NAME ></button>
+                    <span id="nameerror" style="display:block; color: red"></span>
                 </form>
 
                 <form id="licenseform">
                     <input type="text" id="licensesearchinput" class="license-num-search" placeholder="ENTER LICENSE NUMBER">
                     <button type="button" id="submitlicense">FIND BY LICENSE NUMBER ></button>
+                    <span id="licenseerror" style="display:block; color: red"></span>
+
                 </form>
             </section>
 

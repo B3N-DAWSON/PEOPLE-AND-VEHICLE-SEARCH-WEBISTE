@@ -12,16 +12,22 @@
 <body>
     <div id="container">
         <header>
-            <h1 class='vehiclesearchmaintitle'> INSURE MY RIDE</h1>
+        
+        <!-- COMPANY LOGO + LINK TO INDEX -->
+
             <nav>
                 <div class="nav-container">
-                    <ul class="vehiclesearch-navlinks">
                         <!-- TOOLBAR -->
-                        <li><a href='index.html' class="people-search ">People search</a></li>
-                        <li><a href='vehiclesearch.html' class="vsnav-vehiclesearch ">Vehicle search</a></li>
-                        <li><a href='addavehicle.html' class="vsnav-vehicleadd ">Add a vehicle</a></li>
+                     <a href="/index.html" class="vsimgtoindex"> 
+                        <img id="logo" src="/images/companylogo.png" alt="Companylogowithcarandtick" width="300px" />
+                    </a>
+                    <ul class="vehiclesearch-navlinks">
+                        <li><a href='index.html' class="vsnav-peoplesearch ">Search for a customer</a></li>
+                        <li><a href='vehiclesearch.html' class="vsnav-vehiclesearch ">Search for a vehicle</a></li>
+                        <li><a href='addavehicle.html' class="vsnav-vehicleadd ">Register a vehicle</a></li>
+                        <li><a href='newowner.html' class="vsnav-customeradd ">Register a new customer</a></li>
                     </ul>
-                </div>
+                </div>      
             </nav>
         </header>
 
@@ -39,6 +45,8 @@
                 <p><strong>Search by Vehicle Registration</strong></p>
                 <input type="text" id="vssearchbar" class="vehicleregsearch" placeholder="ENTER REG NUMBER">
                 <button type="button" id="regsubmitbutton">FIND BY VEHICLE REG ></button>
+                <span id="regerror" style="display:block; color: red"></span>
+
             </form>
 
             <!-- SUCCESS, ERROR MSG + DB RETURN -->
