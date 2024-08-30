@@ -5,7 +5,10 @@
     const currentPage = window.location.pathname;
 
     // TO-DO
-    // - Error msgs and highlighting searchbars on all pages but people search 
+    // - Fix actual if statement where query is executed from as new if statements lost its meaning 
+    // - Error msgs and highlighting searchbars (owner add)
+    //- white space below webpage on people search + vehicle search
+
     // - Change colour of text above searchbars 
     // - Enforce same text for all pages navbar
     // - position company logo better 
@@ -470,34 +473,56 @@ if (currentPage === '/addavehicle.html') {
     document.getElementById('vehicleaddsubmitbutton').addEventListener('click', async function() {
     
     /* FUNCTION CLEAR ALL SEARCHBAR HIGHLIGHTS AND ERROR MSGS */
-    function clearAllVa()
+    function clearErrorMsgva(regValue,makeValue,modelValue,colourValue,ownerValue)
     {
-        regSearchbar.classList.remove('highlighterror-va')
-        regerrormsg.textContent = '';  
-        
-        makeSearchbar.classList.remove('highlighterror-va')
-        makeerrormsg.textContent = '';
-        
-        modelSearchbar.classList.remove('highlighterror-va')
-        modelerrormsg.textContent = '';
+        console.log("CLEAR")
 
-        colourSearchbar.classList.remove('highlighterror-va')
-        colourerrormsg.textContent = '';
+        if(regValue === 1)
+        {
+            regSearchbar.classList.remove('highlighterror-va')
+            regerrormsg.textContent = ''; 
+            regSearchbar.nextElementSibling.classList.remove('errorsymbol');
+ 
+        }
 
-        ownerSearchbar.classList.remove('highlighterror-va')
-        ownererrormsg.textContent = '';
+        if(makeValue === 1)
+        {
+            makeSearchbar.classList.remove('highlighterror-va')
+            makeerrormsg.textContent = '';
+        }
+        
+        if(modelValue === 1)
+        {
+            modelSearchbar.classList.remove('highlighterror-va')
+            modelerrormsg.textContent = '';
+            modelSearchbar.nextElementSibling.classList.remove('show-icon');
+
+        }
+
+        if(colourValue === 1)
+        {
+            colourSearchbar.classList.remove('highlighterror-va')
+            colourerrormsg.textContent = '';
+        }
+
+        if(ownerValue === 1)
+        {
+            ownerSearchbar.classList.remove('highlighterror-va')
+            ownererrormsg.textContent = '';
+        }
     }
 
     /* FUNCTION FOR ERROR MSGS AND HIGHLIGHTS DEPENDING ON THE SOURCE SEARCHBAR OF THE ERROR */
     function errorMsgVa(errMsg,regVal,makeVal,modelVal,colourVal,ownerVal)
     {
-        clearAllVa();
-    
+
         if(regVal === 1)
         {
             regSearchbar.classList.add('highlighterror-va');
             regerrormsg.textContent = errMsg;
-            regerrormsg.classList.add('error-message');           
+            regerrormsg.classList.add('error-message');    
+            regSearchbar.nextElementSibling.classList.add('errorsymbol');
+    
         }
 
         if(makeVal === 1)
@@ -505,6 +530,8 @@ if (currentPage === '/addavehicle.html') {
             makeSearchbar.classList.add('highlighterror-va');
             makeerrormsg.textContent = errMsg;
             makeerrormsg.classList.add('error-msg');
+            makeSearchbar.nextElementSibling.classList.add('show-icon');
+
         }
 
         if(modelVal === 1)
@@ -539,81 +566,211 @@ if (currentPage === '/addavehicle.html') {
         const colourSearchbar = document.getElementById('colour');
         const ownerValue = document.getElementById('owner').value;
         const ownerSearchbar = document.getElementById('owner');
+        const regErrorMsgElement = document.getElementById('regerrormsg');
+        const makeErrorMsgElement = document.getElementById('makeerrormsg')
+        const modelErrorMsgElement = document.getElementById('modelerrormsg')
+        const colourErrorMsgElement = document.getElementById('colourerrormsg')
+        const ownerErrorMsgElement = document.getElementById('ownererrormsg')
         
         const alphaNum = /^[a-zA-Z0-9]*$/;
+        const alphaNumSpace = /^[a-zA-Z0-9' ']*$/;
 
         var regErrorFlag = 0;
+        var regClearFlag = 0;
         var makeErrorFlag = 0;
+        var makeClearFlag = 0;
         var modelErrorFlag = 0;
+        var modelClearFlag = 0
         var colourErrorFlag = 0;
+        var colourClearFlag = 0;
         var ownerErrorFlag = 0;
+        var ownerClearFlag = 0;
+        
         
         /* ONE OR MORE INPUT FIELDS MISSING DATA ERROR */
         if (regValue=== '' ) 
         {
             console.log("executing1");
             var regErrorFlag = 1;
+        }else
+        {
+            var regClearFlag = 1
         }
 
         if(makeValue === '' ) 
         {
             console.log("executing2");
             var makeErrorFlag = 1;
+        }else
+        {
+            var makeClearFlag = 1
         }
 
         if (modelValue === '' ) 
         {
             console.log("executing3");
             var modelErrorFlag = 1;
+        }else
+        {
+            var modelClearFlag = 1
         }
         
         if(colourValue === '' ) 
         {
             console.log("executing4");
             var colourErrorFlag = 1;
+        }else
+        {
+            var colourClearFlag = 1
         }
         
         if (ownerValue === '' ) 
         {
             console.log("executing5");
             var ownerErrorFlag = 1;
+        }else
+        {
+            var ownerClearFlag = 1
         }
 
+        console.log(regErrorFlag,makeErrorFlag,modelErrorFlag,colourErrorFlag,ownerErrorFlag);
+
         errorMsgVa("*Missing information in this field",regErrorFlag,makeErrorFlag,modelErrorFlag,colourErrorFlag,ownerErrorFlag);
+        clearErrorMsgva(regClearFlag,makeClearFlag,modelClearFlag,colourClearFlag,ownerClearFlag);
 
         /* NO SPACES MEANS NO LAST NAME ERROR */
-        if(!ownerValue.includes(" ") )
+        if(!ownerValue.includes(" ") && ownerValue !== '')
         {
-            clearAllVa();
             console.log("---------------------------------");
             console.error('Name field must include a FIRST and LAST name to uniquely identify a customer');
             console.log("---------------------------------");
-
-            errorMsgVa("*Field requries FIRST and LAST name!",0,0,0,0,1)       
+            errorMsgVa("*Field requries FIRST and LAST name!",0,0,0,0,1);    
+        }
+        
+         var regErrorFlagspecial = 0;
+         var regClearFlagspecial = 0
+         var makeErrorFlagspecial = 0;
+         var makeClearFlagspecial = 0
+         var modelErrorFlagspecial = 0;
+         var modelClearFlagspecial = 0
+         var colourErrorFlagspecial = 0;
+         var colourClearFlagspecial = 0
+         var ownerErrorFlagspecial = 0;
+         var ownerClearFlagspecial = 0
 
         /* USE OF SPECIAL CHARACTERS ERROR */
-        } else if (!alphaNum.test(regValue) && !alphaNum.test(makeValue) && !alphaNum.test(modelValue) && !alphaNum.test(colourValue) && !alphaNum.test(ownerValue)) {
-            clearAllVa();
-            console.log("---------------------------------");
-            console.error('[ERROR] Invalid information entered [ERROR] : Cannot use this special character in the database.');
-            console.log("---------------------------------");
-            err("Cannot use special characters");
-            return;
+        if (!alphaNum.test(regValue))
+        {
+            var regErrorFlagspecial = 1;
 
-        /* SUCCESS: ALL FIELDS FILLED AND ADDING TO DB */
-        } else {
-            // Searches database for an ID based on name provided
+            if(regErrorMsgElement !== '')
+            {
+                regerrormsg.textContent = 'Cannot use special characters!'
+                regSearchbar.classList.add('highlighterror-va'); // Highlight searchbar
+                console.error("Cannot use special characters!");
+            }
+            else
+            {
+                console.log("special reg")
+                console.error("Cannot use special characters!");
+            }
+        }
+            
+        if (!alphaNum.test(makeValue))
+        {
+            var makeErrorFlagspecial = 1;
+
+            if(makeErrorMsgElement !== '')
+            {
+                makeerrormsg.textContent = 'Cannot use special characters!'
+                makeSearchbar.classList.add('highlighterror-va'); // Highlight searchbar
+                console.error("Cannot use special characters!");
+            }
+            else
+            {
+                console.log("special reg")
+                console.error("Cannot use special characters!");
+            }
+        }
+                    
+        if (!alphaNum.test(modelValue))
+        {
+            var modelErrorFlagspecial = 1;
+
+            if(modelErrorMsgElement !== '')
+            {
+                modelerrormsg.textContent = 'Cannot use special characters!'
+                modelSearchbar.classList.add('highlighterror-va'); // Highlight searchbar
+                console.error("Cannot use special characters!");
+            }
+            else
+            {
+                console.log("special reg")
+                console.error("Cannot use special characters!");
+            }
+        }
+                    
+        if (!alphaNum.test(colourValue))
+        {
+            var colourErrorFlagspecial = 1;
+            
+            if(colourErrorMsgElement !== '')
+            {
+                colourerrormsg.textContent = 'Cannot use special characters!'
+                colourSearchbar.classList.add('highlighterror-va'); // Highlight searchbar
+                console.error("Cannot use special characters!");
+
+            }
+            else
+            {
+                console.error("Cannot use special characters!");
+            }
+        }
+                    
+        if (!alphaNumSpace.test(ownerValue))
+        {
+            console.log('ownerValue:', ownerValue);
+
+            var ownerErrorFlagspecial = 1;
+
+            if(ownerErrorMsgElement !== '')
+            {
+                ownererrormsg.textContent = 'Cannot use special characters!'
+                ownerSearchbar.classList.add('highlighterror-va'); // Highlight searchbar
+                console.error("Cannot use special characters!");
+            }
+            else
+            {
+                console.log("special reg")
+                console.error("Cannot use special characters!");
+            }
+        }
+
+
+        if (regErrorFlagspecial === 1 || modelErrorFlagspecial === 1 || makeErrorFlagspecial === 1 || colourErrorFlagspecial === 1 || ownerErrorFlagspecial === 1)
+        {   
+            console.log('ownerValude:', ownerValue);
+
+            console.log("owner flag value",ownerErrorFlagspecial)
+            errorMsgVa("*Cannot use special characters!",regErrorFlagspecial,makeErrorFlagspecial,modelErrorFlagspecial,colourErrorFlagspecial,ownerErrorFlagspecial); 
+        }
+        
+        if (regerrormsg.textContent === '' && makeerrormsg.textContent === '' && modelerrormsg.textContent === '' && colourerrormsg.textContent === '' && ownererrormsg.textContent === '') 
+        {
+
+            /* SUCCESS: ALL FIELDS FILLED AND ADDING TO DB */
+                // Searches database for an ID based on name provided
             if (regValue !== '' || makeValue !== '' || modelValue !== '' || colourValue !== '' || ownerValue !== '') {
-                const id = await searchOwnerByName(owner);
+                console.log("success ")
+                const id = await searchOwnerByName(ownerValue);
                 /* ID FOUND THAT BELONGS TO NAME SO VEHICLE INFO IS ADDED TO THAT OWNER */
                 if (id) {
                     const dataToAdd = {
-                        VehicleID: reg,
-                        Make: make,
-                        Model: model,
-                        Colour: colour,
+                        VehicleID: regValue,
+                        Make: makeValue,
+                        Model: modelValue,
+                        Colour: colourValue,
                         OwnerID: id
-                        
                     };
 
                     // Insert data into the table
@@ -628,13 +785,15 @@ if (currentPage === '/addavehicle.html') {
                     } 
 
                     /* SUCCESS: VEHICLE ADDED TO SYSTEM  */
-                    else {
+                    else
+                    {
                         console.log("---------------------------------");
                         console.log("Input data has been successfully added to the database.");
                         console.log("---------------------------------");
-                        msg("The vehicle has successfully been added to the system!");
+                        msg("The vehicle has successfully been added to the system");
                     }
-                    /*  */
+                
+                /*  */
                 } else {
                     console.error('C');
                     err("Customer does not exist under that name. Try registering them.");
@@ -642,6 +801,7 @@ if (currentPage === '/addavehicle.html') {
                 }
             }
         }
+    })  
 
         // Function to search owner by name in the people database when adding a new vehicle 
         async function searchOwnerByName(vehicleOwnerID) {
@@ -666,141 +826,8 @@ if (currentPage === '/addavehicle.html') {
                 }
             }
         }
-
-        function displayOwnerForm() {
-            const vehicleAddForm = document.getElementById('vehicleadd');
-            const parentElement = vehicleAddForm.parentNode;
-            if (vehicleAddForm) vehicleAddForm.remove();
-
-            const form = document.createElement('form');
-            form.id = 'addOwnerForm';
-
-            const fields = [
-                { label: 'Person ID:', id: 'personid', type: 'num' },
-                { label: 'Name:', id: 'name', type: 'text' },
-                { label: 'Address:', id: 'address', type: 'text' },
-                { label: 'Date of Birth:', id: 'dob', type: 'text' },
-                { label: 'License Number:', id: 'license', type: 'text' },
-                { label: 'License Expiry Date:', id: 'expire', type: 'text' },
-            ];
-
-            fields.forEach(({ label, id, type }) => {
-                const labelElement = document.createElement('label');
-                labelElement.textContent = label;
-                const inputElement = document.createElement('input');
-                inputElement.id = id;
-                inputElement.type = type;
-                form.appendChild(labelElement);
-                form.appendChild(inputElement);
-                form.appendChild(document.createElement('br'));
-            });
-
-            const addButton = document.createElement('button');
-            addButton.textContent = 'Add owner';
-            addButton.type = 'submit';
-            form.appendChild(addButton);
-
-            parentElement.appendChild(form);
-
-            form.addEventListener('submit', async function(event) {
-                const id = document.getElementById('personid').value;
-                const name = document.getElementById('name').value;
-                const address = document.getElementById('address').value;
-                const dob = document.getElementById('dob').value;
-                const license = document.getElementById('license').value;
-                const expire = document.getElementById('expire').value;
-
-                if (!alphaNum.test(id) && !alphaNum.test(name) && !alphaNum.test(address) && !alphaNum.test(dob) && !alphaNum.test(license) & !alphaNum.test(license)) {
-                    console.log("---------------------------------");
-                    console.error('[ERROR] Invalid information entered [ERROR] : Cannot use this special character in the database.');
-                    console.log("---------------------------------");
-                    msg("Cannot use special characters");
-                    error();
-                    event.preventDefault();
-                    return;
-                } else if (id === '' || name === '' || address === '' || dob === '' || license === '' || expire === '') {
-                    console.log("---------------------------------");
-                    console.error('[ERROR] Please fill in all fields with the owner information [ERROR] : Enter all the details of the owner in the fields provided.');
-                    console.log("---------------------------------");
-                    msg("Please fill in all fields with the owner information.");
-                    error();
-                    event.preventDefault();
-                    return
-                } else {
-                    if (id !== '' || name !== '' || address !== '' || dob !== '' || license !== '' || expire !== '') {
-                        event.preventDefault();
-                        await addNewOwner();
-                    }
-                }
-            });
-        }
-
-        async function addNewOwner() {
-            const id = document.getElementById('personid').value;
-            const name = document.getElementById('name').value;
-            const address = document.getElementById('address').value;
-            const dob = document.getElementById('dob').value;
-            const license = document.getElementById('license').value;
-            const expire = document.getElementById('expire').value;
-
-            const dataToAdd = {
-                personid: id,
-                Name: name,
-                Address: address,
-                DOB: dob,
-                LicenseNumber: license,
-                ExpiryDate: expire
-            };
-
-            const { data, error } = await supabase.from('people').insert([dataToAdd]);
-            if (error) {
-                console.log("---------------------------------");
-                console.error('[ERROR] Could not add new owner:');
-                console.log("---------------------------------");
-                err("Could not add new owner.");
-            } else {
-                console.log("---------------------------------");
-                console.log("New owner added successfully.");
-                console.log("---------------------------------");
-                msg("Owner added successfully");
-                addOrigCar(); // add original car details 
-            }
-        }
-
-        // Add the original car which is associated with the newly added person
-        async function addOrigCar() {
-
-            // Retrieve owner ID from the newly added owner
-            const owner = document.getElementById('personid').value;
-
-            const dataToAdd = {
-                VehicleID: reg,
-                Make: make,
-                Model: model,
-                Colour: colour,
-                OwnerID: owner
-            };
-
-            const { data, error } = await supabase.from('vehicle').insert([dataToAdd]);
-            if (error) {
-                msg("Failed to add vehicle details.");
-                error();
-                console.log("---------------------------------");
-                console.error('[ERROR] Failed to add vehicle details to system');
-                console.log("---------------------------------");
-            } else {
-                msg("Vehicle added successfully! Now refreshing page...");
-                console.log("---------------------------------");
-                console.log('Vehicle details have sucessfully been added to the system! Now refreshing page...');
-                console.log("---------------------------------");
-
-                setTimeout(() => {
-                    window.location.reload();
-                }, 3000);
-            }
-        }
-    });
 }
+
 
 
     //######################################### NEW OWNER ADD WEBPAGE [vehicle db] ############################################################################
@@ -955,7 +982,7 @@ if (currentPage === '/newowner.html') {
 
         /* SEARCH SUCCESS MSG PRINT WITH RESULTS RETURN */
         msgElement.innerHTML = `
-        <strong> SEARCH SUCESSFUL! </strong>
+        <strong>SUCCESS!</strong>
         <hr>
           <span class="resultsnum">${fullMessage}</span>`; // Print return results number 
         msgElement.className = ''; // Clear previous classes

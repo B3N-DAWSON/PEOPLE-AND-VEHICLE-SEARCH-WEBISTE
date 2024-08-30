@@ -283,7 +283,8 @@ margin-top: 7px;
 
 /* [CHECK] RETURN RESULT */
 div.search-result-item {
-border: 1px solid #ccc;
+border: 1px solid black;
+
 padding: 10px;
 margin: 5px;
 /* Adjust margin as needed */
@@ -326,7 +327,7 @@ font-size: 45px;
 #error p
 {
     font-size: 20px;
-    color: white;
+    color: black;
     font-weight: normal;
 }
 
@@ -354,7 +355,7 @@ font-family: 'Times New Roman', Times, serif;
 /* SUCCESS MSG NUMBER OF RESULTS TEXT */
 .resultsnum 
 {
-    color: white;
+    color: black;
     font-weight: normal;
     font-size: 20px;
 }
@@ -363,7 +364,7 @@ font-family: 'Times New Roman', Times, serif;
 
 
 #resultsnum {
-color: white;
+color: black;
 margin-bottom: 50px;
 }
 
@@ -409,6 +410,16 @@ grid-row: 1;
 /
 }
 
+i.regerrsymbol.fas fa-exclamation-circle show-icon {
+    position: absolute;
+    right: 10px;
+    color: red;
+    display: none; /* Initially hidden */
+}
+
+.show-icon {
+    display: inline; /* Show icon when error occurs */
+}
 
 /* PEOPLE SEARCH NAV BAR  */
 .peoplesearch-navlinks a,
@@ -779,7 +790,7 @@ background-color: #111212
 
 form#vehicleadd p,
 label {
-color: white;
+color: black;
 }
 
 div#searchresults
