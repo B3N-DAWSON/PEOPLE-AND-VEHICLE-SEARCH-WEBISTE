@@ -1,9 +1,13 @@
 
 - Link to website: https://people-and-vehicle-search-webiste-ir4k-oyfena7az.vercel.app/index.html
 
+<br>
+
 # PROJECT PROMPT
 
 - This website was designed for a car insurance company ('Insure My Ride'). It allows them to simply search through their system's for drivers by thier name or license, find vehicles via their vehicle registration number, add vehicles to customers already existing in the client database, as well as add customers to the client database in order to then assign them a vehicle and for thier insurance to be processed. 
+
+<br>
 
 # WHY THIS PROJECT & MORE INFORMATION
 
